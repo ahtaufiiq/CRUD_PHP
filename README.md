@@ -4,9 +4,6 @@
 ![](display.png)
 
 ## Bahasa Pemrogaman Database
-> PHP Version 7.1
-> Mysql
-
-## URL
-http://localhost/Movie/
+* PHP Version 7.1
+* Mysql
 
