@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2019 at 09:42 PM
+-- Generation Time: Dec 05, 2019 at 02:23 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -29,11 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `movie` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `movie` varchar(255) NOT NULL,
   `genre` varchar(255) NOT NULL,
   `productionHouseId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `movie`
+--
+
+INSERT INTO `movie` (`id`, `movie`, `genre`, `productionHouseId`) VALUES
+(2, 'Iron Man', 'Action', 1);
 
 -- --------------------------------------------------------
 
@@ -42,9 +49,16 @@ CREATE TABLE `movie` (
 --
 
 CREATE TABLE `productionhouse` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `productionhouse`
+--
+
+INSERT INTO `productionhouse` (`id`, `name`) VALUES
+(1, 'Marvel');
 
 --
 -- Indexes for dumped tables
@@ -54,7 +68,30 @@ CREATE TABLE `productionhouse` (
 -- Indexes for table `movie`
 --
 ALTER TABLE `movie`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `productionHouseId` (`productionHouseId`);
+
+--
+-- Indexes for table `productionhouse`
+--
+ALTER TABLE `productionhouse`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `movie`
+--
+ALTER TABLE `movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `productionhouse`
+--
+ALTER TABLE `productionhouse`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
